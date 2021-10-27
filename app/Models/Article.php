@@ -9,6 +9,11 @@ class Article extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['id', 'id_category', 'title', 'summary', 'image', 'description', 'author'];
+    protected $fillable = ['id', 'category_id', 'title', 'summary', 'image', 'description', 'author'];
+
+    public function category()
+    {
+        return $this->hasOne(Category::class, 'id', 'category_id');
+    }
 
 }

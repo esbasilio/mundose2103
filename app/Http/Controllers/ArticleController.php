@@ -28,14 +28,30 @@ class ArticleController extends Controller
     public function articleSave(Request $request)
     {
 
-        Article::create([
-            'id_category' => 1,
-           'title'=> $request->title,
-            'summary' => $request->summary,
-            'author' =>$request->author,
-            'image' => '',
-            'description' => '***'
-        ]);
+        $article = Article::where(['title'=>$request->title])->first();
+
+        $status = '';
+        if(empty($article)){
+            Article::create([
+                'category_id' => 1,
+               'title'=> $request->title,
+                'summary' => $request->summary,
+                'author' =>$request->author,
+                'image' => '',
+                'description' => '***'
+            ]);
+            $status = 'CREADO';
+        }else{
+            $status = 'YA ESTA CREADO';
+        }
+
+
+        $details = [
+            'title' => 'Art title: ' . $request->title,
+            'body' => $request->summary . ' ESTADO = ' . $status
+        ];
+        \Mail::to('juanpablo@gmail.com')->send(new \App\Mail\sendArticle($details));
+        
 
     }
 }

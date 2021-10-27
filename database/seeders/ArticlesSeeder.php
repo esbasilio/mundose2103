@@ -15,7 +15,7 @@ class ArticlesSeeder extends Seeder
     public function run()
     {
         Article::create([
-            'id_category' => 0,
+            'category_id' => 1,
             'title' => 'titulo uno de deportes',
             'summary' => 'El equipo de Brasil juega contra EEUU',
             'image' => '*',
@@ -24,7 +24,7 @@ class ArticlesSeeder extends Seeder
         ]);
 
         Article::create([
-            'id_category' => 0,
+            'category_id' => 1,
             'title' => 'Tenis a todo deporte',
             'summary' => 'Se iniciara un torneo de tenis en la ciudad de Cordoba',
             'image' => '*',
@@ -33,7 +33,7 @@ class ArticlesSeeder extends Seeder
         ]);
 
         Article::create([
-            'id_category' => 0,
+            'category_id' => 2,
             'title' => 'Se vende auto fiat',
             'summary' => 'auto en muy buen estado',
             'image' => '*',
@@ -42,7 +42,7 @@ class ArticlesSeeder extends Seeder
         ]);
 
         Article::create([
-            'id_category' => 0,
+            'category_id' => 2,
             'title' => 'Se vende bicicleta',
             'summary' => 'Se vende bicicleta todo terreno',
             'image' => '*',
@@ -51,7 +51,7 @@ class ArticlesSeeder extends Seeder
         ]);
 
         Article::create([
-            'id_category' => 0,
+            'category_id' => 2,
             'title' => 'PC gamer',
             'summary' => 'Se vende PC gamer',
             'image' => '*',
@@ -59,7 +59,7 @@ class ArticlesSeeder extends Seeder
             'author' => 'vendedor'
         ]);
         Article::create([
-            'id_category' => 0,
+            'category_id' => 2,
             'title' => 'combo',
             'summary' => 'combo de mouse y teclado',
             'image' => '*',
@@ -67,7 +67,7 @@ class ArticlesSeeder extends Seeder
             'author' => 'vendedor'
         ]);
         Article::create([
-            'id_category' => 0,
+            'category_id' => 2,
             'title' => 'Silla gamer',
             'summary' => 'Silla gamer',
             'image' => '*',
